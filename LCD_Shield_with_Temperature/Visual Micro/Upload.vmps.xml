@@ -1,0 +1,57 @@
+<VisualMicro>
+  <Program Name="LCD_Shield_with_Temperature" Ext=".ino" Location="D:\Users\Robbie\My Documents\Aquarium Controller\LCD_Shield_with_Temperature">
+    <Platform Name="arduino10x" Package="arduino" Platform="avr" Architecture="avr">
+      <Board Name="mega2560" Description="Arduino Mega 2560 or Mega ADK" CoreFolder="C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino" VariantFullPath="C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega" McuIdePath="C:\Program Files (x86)\Arduino" McuSketchBookPath="D:\Users\Robbie\My Documents\Arduino" name="Arduino Mega 2560 or Mega ADK" upload.protocol="wiring" upload.maximum_size="258048" upload.speed="115200" bootloader.low_fuses="0xFF" bootloader.high_fuses="0xD8" bootloader.extended_fuses="0xFD" bootloader.path="stk500v2" bootloader.file="stk500boot_v2_mega2560.hex" bootloader.unlock_bits="0x3F" bootloader.lock_bits="0x0F" build.mcu="atmega2560" build.f_cpu="16000000L" build.core="arduino" build.variant="mega" runtime.ide.path="C:\Program Files (x86)\Arduino" build.system.path="C:\Program Files (x86)\Arduino\hardware\arduino\system" runtime.ide.version="105" originalid="mega2560" vm.platform.root.path="D:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\arduino10x" build.core.vmresolved="C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino" build.core.parentfolder.vmresolved="C:\Program Files (x86)\Arduino\hardware\arduino\cores" build.core.coresparentfolder.vmresolved="C:\Program Files (x86)\Arduino\hardware\arduino" vm.core.include="arduino.h" ide.hint="Arduino 0023 and 1.0.x Ide" ide.location.key="Arduino" ide.location.ide.winreg="Arduino 1.0.x Application" ide.location.sketchbook.winreg="Arduino 1.0.x Sketchbook" ide.location.sketchbook.preferences="sketchbook.path" ide.location.sketchbook.default="%MYDOCUMENTS%\arduino" ide.location.preferences="%VM_APPDATA_ROAMING%\arduino\preferences.txt" ide.default.package="arduino" ide.default.platform="avr" ide.multiplatform="true" ide.includes="arduino.h" ide.platformswithoutpackage="true" ide.includes.fallback="wprogram.h" ide.extension="ino" ide.extension.fallback="pde" ide.versionLTEQ="149" ide.exe="arduino.exe" ide.hosts="atmel" ide.url="http://arduino.cc/en/Main/Software" vm.debug="true" software="ARDUINO" ide.appid="arduino10x" location.sketchbook="D:\Users\Robbie\My Documents\Arduino" build.board="AVR_MEGA2560" vm.boardsource.path="C:\Program Files (x86)\Arduino\hardware\arduino" vm.platformname.name="avr" build.arch="AVR" build.variant.vmresolved="C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega" vm.runtime.compiler.showwarnings="false" compiler.path="C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\" includes=" -I&quot;C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino&quot;  -I&quot;C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega&quot;  -I&quot;C:\Program Files (x86)\Arduino\libraries\Time&quot;  -I&quot;C:\Program Files (x86)\Arduino\libraries\DS1307RTC&quot;  -I&quot;C:\Program Files (x86)\Arduino\libraries\OneWire&quot;  -I&quot;C:\Program Files (x86)\Arduino\libraries\DallasTemperature&quot;  -I&quot;C:\Program Files (x86)\Arduino\libraries\Wire&quot;  -I&quot;C:\Program Files (x86)\Arduino\libraries\LiquidCrystal&quot;  -I&quot;C:\Program Files (x86)\Arduino\libraries&quot;  -I&quot;C:\Program Files (x86)\Arduino\hardware\arduino\libraries&quot;  -I&quot;D:\Program Files (x86)\Visual Micro\Visual Micro for Arduino\Micro Platforms\default\debuggers&quot;  -I&quot;D:\Users\Robbie\My Documents\Arduino\libraries&quot; " build.path="C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560" build.project_name="LCD_Shield_with_Temperature" build.variant.path="C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega" archive_file="core.a" object_file="C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\DallasTemperature\DallasTemperature.cpp.o" source_file="C:\Program Files (x86)\Arduino\libraries\DallasTemperature\DallasTemperature.cpp" object_files="&quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LCD_Shield_with_Temperature.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\Time\DateStrings.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\Time\Time.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\DS1307RTC\DS1307RTC.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\OneWire\OneWire.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\DallasTemperature\DallasTemperature.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\Wire\Wire.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\Wire\utility\twi.c.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\FastIO.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\I2CIO.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\LCD.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\LiquidCrystal.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\LiquidCrystal_I2C.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\LiquidCrystal_SR.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\LiquidCrystal_SR2W.cpp.o&quot; &quot;C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560\LiquidCrystal\LiquidCrystal_SR3W.cpp.o&quot; " build.architecture="avr" vmresolved.compiler.path="C:\Program Files (x86)\Arduino\hardware\tools\avr\bin\" vmresolved.tools.path="C:\Program Files (x86)\Arduino\hardware\tools\avr" />
+    </Platform>
+    <Compile CompilerErrors="0" ConfigurationName="Debug" StopOnError="False" OptimiseLibs="True" OptimiseCore="True" BuildPath="C:\Users\Robbie\AppData\Local\VMicro\Arduino\Builds\LCD_Shield_with_Temperature\mega2560" IsDebugStart="1" SketchName="LCD_Shield_with_Temperature" ReportDigitalPins="0" ReportAnalogPins="0" ReportI2C="0" ReportFreeMemory="0" IncludeDebug="1" LastDebugPreProcessorDefinitions="VM_DEBUG;VM_DEBUG_ENABLE 1;VM_DEBUG_BANDWIDTH_THROTTLE_MS 33;VM_DEBUGGER_TYPE_HARDWARESERIAL 0;VM_DEBUGGER_TYPE_SOFTWARESERIAL 1;VM_DEBUGGER_TYPE_FASTSERIAL 2;VM_DEBUGGER_TYPE_USB 3;VM_DEBUGGER_TYPE_TEENSY 4;VM_DEBUGGER_TYPE_UART 5;VM_DEBUGGER_TYPE_USART 6;VM_DEBUGGER_TYPE_USBSERIAL 7;VM_DEBUGGER_TYPE_TTYUART 8;VM_DEBUGGER_TYPE_NET_CONSOLE 9;VM_DEBUGGER_TYPE VM_DEBUGGER_TYPE_HARDWARESERIAL;" IncludesDebug="1" IsCompiled="1" />
+    <Debug DebugEnabled="1" />
+    <VCCodeModel>
+      <VCCodeMacros />
+    </VCCodeModel>
+    <BreakPoints>
+      <BreakPoint Index="1" Name="LCD_Shield_with_Temperature.ino, line 211 character 1" Id="d250b53e-39e5-4ce7-a2ac-129fbecc6c0f" Enabled="1" Message="{millis()}" MessageTextType="2" PreProcessedMessage="{0}" Condition="millis()&gt;0 || millis()&gt;1" ConditionType="1" CurrentHits="0" File="d:\users\robbie\my documents\aquarium controller\lcd_shield_with_temperature\lcd_shield_with_temperature.ino" FileLine="211" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="250" HitCountType="4" Language="AVR GCC" LocationType="3" Tag="&lt;vmbp Id='d250b53e-39e5-4ce7-a2ac-129fbecc6c0f'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="1">
+        <Source>204	
+205	  lcd.setCursor(14,1);
+206	  lcd.print(LM35_S1F);
+207	  lcd.write(byte(1));
+208	  lcd.print("F");
+209	}
+210	
+--&gt;211	void loop()
+212	{
+213	  if (timeStatus() == timeSet) {
+214	    LCD_Time_Display();
+215	  }
+216	  else {
+217	    Serial.println("Please set the time");
+218	    Serial.println();  
+219	  }
+220	  lcd.setCursor(0,0);
+</Source>
+        <MessageVariables>
+          <MessageVariable Name="millis()" Index="1" />
+        </MessageVariables>
+      </BreakPoint>
+      <BreakPoint Index="2" Name="LCD_Shield_with_Temperature.ino, line 235 character 1" Id="fae3984c-a9a6-4f04-bcdc-1a0d7435bf55" Enabled="1" Message="" MessageTextType="2" PreProcessedMessage="" Condition="" ConditionType="1" CurrentHits="0" File="d:\users\robbie\my documents\aquarium controller\lcd_shield_with_temperature\lcd_shield_with_temperature.ino" FileLine="235" FileColumn="1" FunctionName="" FunctionLineOffset="1" FunctionColumnOffset="1" HitCountTarget="1" HitCountType="1" Language="AVR GCC" LocationType="3" Tag="&lt;vmbp Id='fae3984c-a9a6-4f04-bcdc-1a0d7435bf55'/&gt;" Type="1" ToString="System.__ComObject" BreakWhenHit="1">
+        <Source>228	    //  Read the DS sensors found
+229	  for(int i=0;i&lt;NUMBER_OF_BUS; i++)   // poll every bus
+230	  {
+231	    sensors[i]-&gt;begin();
+232	    numberOfDevices[i] = sensors[i]-&gt;getDeviceCount();
+233	    sensors[i]-&gt;requestTemperatures();
+234	    // print the device information
+--&gt;235	    for(int j=0;j&lt;numberOfDevices[i]; j++)    // poll devices connect to the bus
+236	    {
+237	      sensors[i]-&gt;getAddress(tempDeviceAddress[j], j);
+238	      printAddress(tempDeviceAddress[j]);      //print ID
+239	      Serial.print(";"); 
+240	      float tempC = sensors[i]-&gt;getTempC(tempDeviceAddress[j]);
+241	      float tempF = sensors[i]-&gt;getTempF(tempDeviceAddress[j]);
+242		  if(j==0){lcd.setCursor(0,2);}
+243			  else{lcd.setCursor(0,3);}
+244	      lcd.print("DS18                 ");  //  Clear the display to prevent extra characters from interfering when F rolls from 3 to 2 digits
+</Source>
+      </BreakPoint>
+    </BreakPoints>
+  </Program>
+</VisualMicro>
