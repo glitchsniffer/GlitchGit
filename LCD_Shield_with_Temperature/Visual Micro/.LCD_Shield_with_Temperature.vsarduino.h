@@ -16,12 +16,16 @@
 #define __cplusplus
 extern "C" void __cxa_pure_virtual() {;}
 
-void setup(void);
+byte decToBcd(byte val);
+byte bcdToDec(byte val);
+//
 //
 void RL_Toggle();
 void printAddress(DeviceAddress deviceAddress);
+void setRTC();
+void getRTC_Date(byte *second, 	byte *minute, 	byte *hour, 	byte *dayOfWeek, 	byte *dayOfMonth, 	byte *month, 	byte *year);
 void DS18B20_Read();
 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\variants\mega\pins_arduino.h" 
 #include "C:\Program Files (x86)\Arduino\hardware\arduino\cores\arduino\arduino.h"
-#include "D:\Users\Robbie\My Documents\Aquarium Controller\LCD_Shield_with_Temperature\LCD_Shield_with_Temperature.ino"
+#include "D:\Users\Robbie\My Documents\GitHub\GlitchGit\LCD_Shield_with_Temperature\LCD_Shield_with_Temperature.ino"
