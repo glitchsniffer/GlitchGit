@@ -1,9 +1,12 @@
+//#include <Time.h>               //Time Library
+//#include <DS1307RTC.h>          //DS RTC library
 #include <OneWire.h>            //OneWire Library for the DS Sensors
 #include <DallasTemperature.h>  //Dallas Temperature library
 #include <LiquidCrystal_I2C.h>  //LCD I2C library
+#include <LCD.h>                //LCD library
 #include <Wire.h>               //I2C Wire library
 
-
+//  ***********************************************
 //  CONFIGURATION SETUP
 //  ***********************************************
 
@@ -12,17 +15,11 @@ int Sample_Number = 5;  //  Set the number of samples to be taken from each sens
 int Sample_Delay = 500;  //  Sets the delay between the samples taken
 int Temp_Type = 1;  //  Selects between 0 = Celcius or 1 = Farenheit
 
+//  ****************************
+//  END CONFIGURATION SETUP
+//  ****************************
 
-//  RTC Setup
 //  ***********************************************
-
-#define RTC_ADDRESS 0x68  //  Set the RTC address
-
-byte decToBcd(byte val){return((val/10*16)+(val%10));}  //  convert DEC to BCD
-	
-byte bcdToDec(byte val){return((val/16*10)+(val%16));}  //  convert BCD to DEC
-	
-
 //  INITIALIZE THE LCD
 //  ***********************************************
 
@@ -39,29 +36,46 @@ byte bcdToDec(byte val){return((val/16*10)+(val%16));}  //  convert BCD to DEC
 #define D6 6
 #define D7 7
 
-LiquidCrystal_I2C lcd(I2C_ADDR,En,Rw,Rs,D4,D5,D6,D7);  //  Pass the lcd pins for the LiquidCrystal_I2C library to use
+//int n=1;
 
-byte degree[8] = {B01100,B10010,B10010,B01100,B00000,B00000,B00000,};  //  set the lcd char for the degree symbol
+LiquidCrystal_I2C lcd(I2C_ADDR,En,Rw,Rs,D4,D5,D6,D7);
 
+//  initialize custom display characters here
+byte degree[8] = {
+B01100,B10010,B10010,B01100,B00000,B00000,B00000,};
 
+//  ****************************
+//  END INITIALIZATION OF LCD
+//  ****************************
+
+//  ***********************************************
 //  INITIALIZE THE DS18B20 TEMPERATURE SENSORS
 //  ***********************************************
 
-//  define the DS18B20 global variables
-const int ONE_WIRE_BUS[]={2};		//  the array to define which pins you will use for the busses ie {2,3,4,5};
-#define TEMPERATURE_PRECISION 9		//  temperature precision 9-12 bits
-#define NUMBER_OF_BUS 1				//  how many busses will you use for the sensors
-#define POLL_TIME 500				//  how long the avr will poll every sensors
+//  setup the DS18B20
+const int ONE_WIRE_BUS[]={2};
+#define TEMPERATURE_PRECISION 9
+#define NUMBER_OF_BUS 1
+#define POLL_TIME 500    //how long the avr will poll every sensors
 
-OneWire *oneWire[NUMBER_OF_BUS];	//  Setup oneWire instances to communicate with any OneWire Devices
+//  Setup oneWire instances to communicate with any OneWire Devices
+OneWire *oneWire[NUMBER_OF_BUS];
 
-DallasTemperature *sensors[NUMBER_OF_BUS];  // Pass onewire reference to Dallas temperatures.
+// Pass onewire reference to Dallas temperatures.
+DallasTemperature *sensors[NUMBER_OF_BUS];
 
-DeviceAddress tempDeviceAddress[8];  // arrays to hold device addresses
+// arrays to hold device addresses
+DeviceAddress tempDeviceAddress[8];
 
-int numberOfDevices[NUMBER_OF_BUS];  
+int numberOfDevices[NUMBER_OF_BUS];
 
+//int RTC_Status=1;
 
+//  ****************************
+//  END INITIALIZATION OF  THE DS18B20 TEMPERATURE SENSORS
+//  ****************************
+
+//  ***********************************************
 //  INITIALIZE THE RELAYS
 //  ***********************************************
 
@@ -69,31 +83,29 @@ int Relay_Pins[] = {31, 33, 35, 37, 39, 41, 43, 45};
 int Relay_Count = 8;
 
 
-//  VOID SETUP
-//  ***********************************************
-void setup()
+//  ****************************
+//  END INITIALIZATION OF  THE RELAYS
+//  ****************************
+void setup(void)
 {
-	Wire.begin();
-
-//  Set the RTC if needed *****	
-//	setRTC();
-
-//  Setup the relays *****
 	for(int relay = 0; relay < Relay_Count; relay++){pinMode(Relay_Pins[relay], OUTPUT);}
 	for(int relay = 0; relay < Relay_Count; relay++){digitalWrite(Relay_Pins[relay], HIGH);}
 
-//  Setup the LCD *****
 	lcd.begin(20, 4);  //  setup the LCD's number of columns and rows
 	
 	lcd.createChar(1, degree);  //  init custom characters as numbers
 	lcd.setBacklightPin(B_Light,POSITIVE);  //  set the backlight pin and polarity
 	lcd.setBacklight(HIGH);  //  toggle the backlight on
 
-//  Setup the Serial port *****
-	if (Serial_Debug == 1) Serial.begin(115200);  //  start the serial port if debugging is on
+	if (Serial_Debug == 1) Serial.begin(9600);  //  start the serial port if debugging is on
 	while (!Serial) ;  //  wait untill the serial monitor opens
 		
-//  Setup the DS18B20 Sensors
+/*	setSyncProvider(RTC.get);  //  this function get the time from the RTC
+	if (timeStatus()!=timeSet){
+		RTC_Status = 0;
+		Serial.println("Unable to get the RTC");}
+	else{Serial.println("RTC has set the system time");}
+*/
 	//  Check to see how many sensors are on the busses
 	for(int i=0;i<NUMBER_OF_BUS; i++)   //search each bus one by one
 	{
@@ -131,25 +143,12 @@ void setup()
 }
 void loop()
 {
-	byte second, minute, hour, dayOfWeek, dayOfMonth, month, year;
-	
-	getRTC_Date(&second, &minute, &hour, &dayOfWeek, &dayOfMonth, &month, &year);
-	Serial.print(hour, DEC);
-	Serial.print(":");
-	Serial.print(minute, DEC);
-	Serial.print(":");
-	Serial.print(second, DEC);
-	Serial.print(" ");
-	Serial.print(month, DEC);
-	Serial.print("/");
-	Serial.print(dayOfMonth, DEC);
-	Serial.print("/");
-	Serial.print(year, DEC);
-	Serial.print(" Day_of_week:");
-	Serial.println(dayOfWeek, DEC);
-	
+/*	if (RTC_Status==1){LCD_Time_Display();}
+	delay(1000);
+	if (RTC_Status==1){Display_Date();}
+*/
 	DS18B20_Read();	  //  Read DS Temperature sensors
-	delay(900);
+	delay(1000);
 //	RL_Toggle();
 	
 }
@@ -182,58 +181,6 @@ void printAddress(DeviceAddress deviceAddress)
 	}
 }
 
-//  Set date and time variables
-void setRTC()
-{	
-	byte second, minute, hour, dayOfWeek, dayOfMonth, month, year;  //  declare bytes for the variables
-
-	second = 30;		//  0-59
-	minute = 2;		//  0-59
-	hour = 23;			//  0-23
-	dayOfWeek = 4;		//	1-7
-	dayOfMonth = 11;	//  1-28,29,30,31
-	month = 4;			//  1-12
-	year = 14;			//  0-99
-
-	Wire.beginTransmission(RTC_ADDRESS);
-	int i = 0;
-	Wire.write(i);
-	Wire.write(decToBcd(second));	//  0 to bit 7 starts the clock
-	Wire.write(decToBcd(minute));
-	Wire.write(decToBcd(hour));		//If you want 12 hour am/pm you will need to set bit 6 (also need to change readDateRTC)
-	Wire.write(decToBcd(dayOfWeek));
-	Wire.write(decToBcd(dayOfMonth));
-	Wire.write(decToBcd(month));
-	Wire.write(decToBcd(year));
-	Wire.endTransmission();
-}
-
-//  Get the date and time from the RTC
-void getRTC_Date(byte *second,
-	byte *minute,
-	byte *hour,
-	byte *dayOfWeek,
-	byte *dayOfMonth,
-	byte *month,
-	byte *year)
-{
-	//  Reset the register pointer
-	Wire.beginTransmission(RTC_ADDRESS);
-	int i = 0;
-	Wire.write(i);
-	Wire.endTransmission();
-	
-	Wire.requestFrom(RTC_ADDRESS, 7);
-	
-	// A few of these need masks because certain bits are control bits
-	*second		=bcdToDec(Wire.read() & 0x7f);
-	*minute		=bcdToDec(Wire.read());
-	*hour		=bcdToDec(Wire.read() & 0x3f);  //  Need to change this if 12 am/pm
-	*dayOfWeek	=bcdToDec(Wire.read());
-	*dayOfMonth	=bcdToDec(Wire.read());
-	*month		=bcdToDec(Wire.read());
-	*year		=bcdToDec(Wire.read());
-}
 /*void LCD_Time_Display()
 {
 	Serial.print(timeStatus());
